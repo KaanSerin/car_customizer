@@ -30,35 +30,35 @@ const CarCustomizer = ({data}) => {
             <div className={classes.Models}>
                 {models.map(model =>
                     <Option selected={compareTwoObjects(model, carInformation.model)}
-                                             method={() => dispatch(updateModel(model))} key={model.id}
-                                             name={model.name}/>)}
+                            method={() => dispatch(updateModel(model))} key={model.id}
+                            name={model.name}/>)}
             </div>
 
             <div className={classes.OptionsHeader}>Engines</div>
             <div className={classes.Engines}>
                 {engines.map(engine =>
                     <Option selected={compareTwoObjects(engine, carInformation.engine)}
-                                               disabled={!carInformation.model || !isEngineCompatible(engine.type)}
-                                               method={() => dispatch(updateEngine(engine))} key={engine.id}
-                                               name={engine.name}/>)}
+                            disabled={!carInformation.model || !isEngineCompatible(engine.type)}
+                            method={() => dispatch(updateEngine(engine))} key={engine.id}
+                            name={engine.name}/>)}
             </div>
 
             <div className={classes.OptionsHeader}>Gearbox</div>
             <div className={classes.Gearboxes}>
                 {gearboxes.map(gearbox =>
                     <Option selected={compareTwoObjects(gearbox, carInformation.gearbox)}
-                                                  method={() => dispatch(updateGearbox(gearbox))} key={gearbox.id}
-                                                  name={gearbox.name}
-                                                  disabled={!isGearboxCompatible(gearbox.id)}/>)}
+                            method={() => dispatch(updateGearbox(gearbox))} key={gearbox.id}
+                            name={gearbox.name}
+                            disabled={!isGearboxCompatible(gearbox.id)}/>)}
             </div>
 
             <div className={classes.OptionsHeader}>Color</div>
             <div className={classes.Colors}>
                 {colors.map(color =>
                     <Color selected={compareTwoObjects(color, carInformation.color)}
-                                            method={() => dispatch(updateColor(color))} key={color.color}
-                                            color={color.color}
-                                            disabled={!carInformation.color|| !isEngineCompatible(color)}/>)}
+                            method={() => dispatch(updateColor(color))} key={color.color}
+                            color={color.color}
+                            disabled={!carInformation.color|| !isEngineCompatible(color)}/>)}
             </div>
         </div>
     )
