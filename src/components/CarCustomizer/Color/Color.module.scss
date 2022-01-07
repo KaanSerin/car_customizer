@@ -1,0 +1,10 @@
+.Color {
+  min-height: 40px;
+  min-width: 40px;
+  margin-right: 1rem;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}

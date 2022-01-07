@@ -1,0 +1,16 @@
+.Option {
+  min-width: 100px;
+
+  text-align: center;
+  background: #ccc;
+
+  padding: 0.5rem;
+  margin-right: 1rem;
+
+  border: none;
+  &:hover, &.selected {
+    cursor: pointer;
+    color:white;
+    background: #282c34;
+  }
+}

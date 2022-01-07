@@ -1,0 +1,39 @@
+.CarPreview {
+  color: #fefefe;
+  background: #282c34;
+
+  max-height: 500px;
+
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
+
+  padding: 1rem 2rem;
+}
+
+.Preview {
+  background: #fefefe;
+
+  .Car {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 10rem;
+  }
+}
+
+.Summary {
+  text-align: end;
+}
+
+.InformationArea {
+  margin-top: 1rem;
+}
+
+.Information {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}

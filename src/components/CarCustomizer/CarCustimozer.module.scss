@@ -1,0 +1,17 @@
+.CarCustomizer {
+  text-align: start;
+}
+
+.Models, .Engines, .Gearboxes, .Colors {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.Subtitle {
+  font-weight: bold;
+}
+
+.OptionsHeader {
+  margin-top: 0.5rem;
+}
