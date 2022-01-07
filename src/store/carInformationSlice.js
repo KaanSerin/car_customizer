@@ -6,24 +6,34 @@ export const carInformationSlice = createSlice({
         model: null,
         engine: null,
         gearbox: null,
-        color: {
-            name: '',
-            color: '#000'
-        },
+        color: null,
+        totalPrice: 0,
     },
     reducers: {
         updateModel: (state, action) => {
+            if(state.engine){
+                state.totalPrice -= state.engine.price
+            }
             state.engine = null
+
+            if(state.model) state.totalPrice -= state.model.price
             state.model = action.payload
+            state.totalPrice += action.payload.price
         },
         updateEngine: (state, action) => {
+            if(state.engine) state.totalPrice -= state.engine.price
             state.engine = action.payload
+            state.totalPrice += action.payload.price
         },
         updateGearbox: (state, action) => {
+            if(state.gearbox) state.totalPrice -= state.gearbox.price
             state.gearbox = action.payload
+            state.totalPrice += action.payload.price
         },
         updateColor: (state, action) => {
+            if(state.color) state.totalPrice -= state.color.price
             state.color = action.payload
+            state.totalPrice += action.payload.price
         },
     },
 })

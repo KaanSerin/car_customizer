@@ -14,22 +14,26 @@ const CarCustomizer = () => {
         {
             id: 1,
             name: 'PRO RS3',
-            compatibleEngineTypes: [1, 2, 3, 4]
+            compatibleEngineTypes: [1, 2, 3, 4],
+            price: 40000
         },
         {
             id: 2,
             name: 'UBER RS2',
-            compatibleEngineTypes: [1, 3, 4]
+            compatibleEngineTypes: [1, 3, 4],
+            price: 30000
         },
         {
             id: 3,
             name: 'STANDARD',
-            compatibleEngineTypes: [2, 3]
+            compatibleEngineTypes: [2, 3],
+            price: 20000
         },
         {
             id: 4,
             name: 'WK',
-            compatibleEngineTypes: [1, 4]
+            compatibleEngineTypes: [4],
+            price: 10000
         },
     ];
 
@@ -38,51 +42,61 @@ const CarCustomizer = () => {
             id: 1,
             name: '5.2L 532BHP',
             type: 1,
+            price: 30000
         },
         {
             id: 2,
             name: '4.2L 443BHP',
             type: 2,
+            price: 20000
         },
         {
             id: 3,
             name: '3.6L 374BHP',
             type: 3,
+            price: 1000
         },
         {
             id: 4,
             name: '2.0L 166BHP',
             type: 4,
+            price: 500
         },
     ];
 
     const GEARBOXES = [
         {
             id: 1,
-            name: 'Manual'
+            name: 'Manual',
+            price: 1000
         },
         {
             id: 2,
-            name: 'Automatic'
+            name: 'Automatic',
+            price: 4000
         },
     ];
 
     const COLORS = [
         {
             name: 'Rosso',
-            color: '#ff1616'
+            color: '#ff1616',
+            price: 500,
         },
         {
             name: 'Grey',
-            color: '#cecece'
+            color: '#cecece',
+            price: 300,
         },
         {
             name: 'Light Brown',
-            color: '#735747'
+            color: '#735747',
+            price: 300,
         },
         {
             name: 'Black',
-            color: '#1c1c1c'
+            color: '#1c1c1c',
+            price: 500,
         },
     ];
 
@@ -128,7 +142,8 @@ const CarCustomizer = () => {
                 {COLORS.map(color =>
                     <Color selected={compareTwoObjects(color, carInformation.color)}
                                             method={() => dispatch(updateColor(color))} key={color.color}
-                                            color={color.color}/>)}
+                                            color={color.color}
+                                            disabled={!carInformation.color|| !isEngineCompatible(color)}/>)}
             </div>
         </div>
     )
