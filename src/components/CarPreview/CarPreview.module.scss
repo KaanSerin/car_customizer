@@ -7,7 +7,7 @@
   display: grid;
   grid-template-rows: 1fr 5fr 1fr;
 
-  padding: 1rem 2rem;
+  padding: 0 2rem 1rem 2rem;
 }
 
 .Preview {
@@ -24,6 +24,9 @@
 }
 
 .Summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: end;
 }
 
@@ -34,6 +37,12 @@
 .Information {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.Price {
+  margin-top: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
 }

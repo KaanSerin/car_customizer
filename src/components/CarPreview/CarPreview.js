@@ -30,13 +30,14 @@ const CarPreview = () => {
                     <div>Color</div>
                     <div>{carInformation?.color?.name}</div>
                 </div>
-                <div className={classes.Information}>
-                    <div>Price</div>
-                    <div>{new Intl.NumberFormat('en-US', {
-                        style: 'currency',
-                        currency: 'USD'
-                    }).format(carInformation?.totalPrice)}</div>
-                </div>
+            </div>
+
+            <div className={classes.Price}>
+                <div>Price</div>
+                <div>{new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(carInformation?.totalPrice)}</div>
             </div>
         </div>
     )
