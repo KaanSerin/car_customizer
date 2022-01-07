@@ -14,7 +14,11 @@ export const carInformationSlice = createSlice({
             if(state.engine){
                 state.totalPrice -= state.engine.price
             }
+            if(state.gearbox){
+                state.totalPrice -= state.gearbox.price
+            }
             state.engine = null
+            state.gearbox = null
 
             if(state.model) state.totalPrice -= state.model.price
             state.model = action.payload

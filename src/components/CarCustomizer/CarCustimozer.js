@@ -15,24 +15,28 @@ const CarCustomizer = () => {
             id: 1,
             name: 'PRO RS3',
             compatibleEngineTypes: [1, 2, 3, 4],
+            compatibleGearboxIds: [2],
             price: 40000
         },
         {
             id: 2,
             name: 'UBER RS2',
             compatibleEngineTypes: [1, 3, 4],
+            compatibleGearboxIds: [2],
             price: 30000
         },
         {
             id: 3,
             name: 'STANDARD',
             compatibleEngineTypes: [2, 3],
+            compatibleGearboxIds: [1, 2],
             price: 20000
         },
         {
             id: 4,
             name: 'WK',
             compatibleEngineTypes: [4],
+            compatibleGearboxIds: [1],
             price: 10000
         },
     ];
@@ -108,6 +112,10 @@ const CarCustomizer = () => {
         return carInformation?.model ? carInformation?.model.compatibleEngineTypes.includes(engineType) : true
     }
 
+    const isGearboxCompatible = (gearboxId) => {
+        return carInformation?.model ? carInformation?.model.compatibleGearboxIds.includes(gearboxId) : true
+    }
+
     return (
         <div className={classes.CarCustomizer}>
             <div className={classes.Subtitle}>CKONFIG 5.1</div>
@@ -134,7 +142,8 @@ const CarCustomizer = () => {
                 {GEARBOXES.map(gearbox =>
                     <Option selected={compareTwoObjects(gearbox, carInformation.gearbox)}
                                                   method={() => dispatch(updateGearbox(gearbox))} key={gearbox.id}
-                                                  name={gearbox.name}/>)}
+                                                  name={gearbox.name}
+                                                  disabled={!isGearboxCompatible(gearbox.id)}/>)}
             </div>
 
             <div className={classes.OptionsHeader}>Color</div>
