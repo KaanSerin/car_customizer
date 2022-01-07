@@ -2,18 +2,24 @@
   min-width: 100px;
 
   text-align: center;
-  background: #ccc;
+  color: #4437C9FF;
+  background: #EEF2FF;
 
   padding: 0.5rem;
   margin-right: 1rem;
 
   border: none;
 
+  &[disabled] {
+    background: #ebeef1;
+    color: #8a82e0;
+  }
+
   &:not([disabled]) {
     &:hover, &.selected {
       cursor: pointer;
       color:white;
-      background: #282c34;
+      background: #4437C9FF;
     }
   }
 }

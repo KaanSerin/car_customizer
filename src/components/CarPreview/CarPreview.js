@@ -6,7 +6,7 @@ const CarPreview = () => {
 
     return (
         <div className={classes.CarPreview}>
-            <div className={classes.Summary}>Summary</div>
+            <div className={classes.Summary}>Car Summary</div>
             <div className={classes.Preview}>
                 <div className={classes.Car}>
                     <i className='fas fa-car' style={{color: carInformation?.color?.color || '#000' }}/>

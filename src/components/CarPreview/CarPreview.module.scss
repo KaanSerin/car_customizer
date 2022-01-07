@@ -1,17 +1,18 @@
 .CarPreview {
   color: #fefefe;
-  background: #282c34;
-
+  background: linear-gradient(180deg, rgba(68,55,201,1) 0%, rgba(9,9,121,1) 100%);
   max-height: 500px;
 
   display: grid;
   grid-template-rows: 1fr 5fr 1fr;
 
   padding: 0 2rem 1rem 2rem;
+  border-radius: 1rem;
 }
 
 .Preview {
   background: #fefefe;
+  border-radius: 0.5rem;
 
   .Car {
     height: 100%;
@@ -27,7 +28,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: end;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
 }
 
 .InformationArea {
