@@ -13,6 +13,7 @@ export const carInformationSlice = createSlice({
     },
     reducers: {
         updateModel: (state, action) => {
+            state.engine = null
             state.model = action.payload
         },
         updateEngine: (state, action) => {
