@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const carInformationSlice = createSlice({
-    name: 'counter',
+    name: 'car',
     initialState: {
         model: null,
         engine: null,
@@ -42,7 +42,6 @@ export const carInformationSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const { updateModel, updateEngine, updateGearbox, updateColor} = carInformationSlice.actions
 
 export default carInformationSlice.reducer
